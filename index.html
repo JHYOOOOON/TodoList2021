@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>투두리스트</title>
+</head>
+
+<body>
+    <main>
+        <div class="today-wrapper">
+            <div class="today">
+                <p class="date"></p>
+                <div>
+                    <p class="month"></p>
+                    <p class="year"></p>
+                </div>
+            </div>
+            <p class="day"></p>
+        </div>
+        <div class="task-wrapper">
+            <ul class="tasks">
+                <li class="done">
+                    <p>Read an article</p>
+                    <i class="fas fa-check-circle"></i>
+                </li>
+                <li class="done">
+                    <p>Read an article</p>
+                    <i class="fas fa-check-circle"></i></li>
+                <li>
+                    <p>Read an article</p>
+                    <i class="far fa-circle"></i></li>
+                <li>
+                    <p>Read an article</p>
+                    <i class="far fa-circle"></i></li>
+            </ul>
+        </div>
+        <div class="register-task">
+            <input type="text" placeholder="Write your task">
+            <button class="submit-btn">Submit</button>
+        </div>
+    </main>
+    <!-- fontawesome -->
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="scripts/date.js"></script>
+    <script src="scripts/todolist.js"></script>
+</body>
+
+</html>

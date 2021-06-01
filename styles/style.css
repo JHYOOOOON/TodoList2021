@@ -1,0 +1,141 @@
+:root {
+    --point-color: #51E3A4;
+}
+
+html {
+    font-family: 'Comfortaa', cursive;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.today-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.today {
+    display: flex;
+    align-items: center;
+}
+
+.date {
+    font-size: 30px;
+    font-weight: 600;
+    margin-right: 7px;
+}
+
+.today div {
+    font-size: 13px;
+}
+
+.month {
+    color: #333;
+    margin-bottom: 1px;
+}
+
+.year {
+    color: #555;
+}
+
+.day {
+    font-size: 14px;
+}
+
+.task-wrapper {
+    flex: 1;
+    margin-bottom: 30px;
+    overflow-y: auto;
+}
+
+.task-wrapper::-webkit-scrollbar {
+    width: 7px;
+}
+
+.task-wrapper::-webkit-scrollbar-track {
+    background-color: #eee;
+}
+
+.task-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #ccc;
+}
+
+.task-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+.tasks li {
+    padding: 20px 0;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+
+/* li+li {
+    border-top: 1px solid #eee;
+} */
+
+.tasks svg {
+    font-size: 25px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.done p {
+    color: #ccc;
+}
+
+.done svg {
+    color: var(--point-color);
+}
+
+.register-task {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 75%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+input:focus {
+    border: 2px solid var(--point-color);
+    outline: none;
+}
+
+button {
+    background-color: var(--point-color);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Comfortaa', cursive;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}

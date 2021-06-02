@@ -1,46 +1,50 @@
 (() => {
-    const input = document.querySelector("input");
-    const submitBtn = document.querySelector("button");
-    const tasks = document.querySelector(".tasks");
+  const input = document.querySelector("input");
+  const submitBtn = document.querySelector("button");
+  const tasks = document.querySelector(".tasks");
 
-    const handleSubmit = () => {
-        if (input.value === "") return;
-        console.log(tasks);
-        const li = document.createElement("li");
-        li.innerHTML = `
+  const handleSubmit = () => {
+    if (input.value === "") return;
+    console.log(tasks);
+    const li = document.createElement("li");
+    li.innerHTML = `
             <p>${input.value}</p>
             <i class="far fa-circle"></i></li>
         `;
-        tasks.appendChild(li);
-        input.value = "";
-    };
+    tasks.appendChild(li);
+    input.value = "";
+  };
 
-    const handleKeyup = (e) => {
-        if (e.key === "Enter") handleSubmit();
-    };
+  const handleKeyup = (e) => {
+    if (e.key === "Enter") handleSubmit();
+  };
 
-    const handleTaskCheck = (e) => {
-        if (e.target.tagName !== "svg" && e.target.tagName !== "path") return;
+  const handleTaskCheck = (e) => {
+    if (e.target.tagName !== "svg" && e.target.tagName !== "path") return;
 
-        let removeTarget = e.target;
+    let removeTarget = e.target;
+    while (removeTarget.className !== "checkBtn") {
+      removeTarget = removeTarget.parentNode;
+    }
 
-        if (removeTarget.tagName === "path") removeTarget = removeTarget.parentNode;
+    let parentLi = removeTarget.parentNode;
+    parentLi.removeChild(removeTarget);
 
-        let parentLi = removeTarget.parentNode;
-        parentLi.removeChild(removeTarget);
+    const span = document.createElement("span");
+    span.className = "checkBtn";
+    const i = document.createElement("i");
+    if (parentLi.className === "done") {
+      parentLi.className = "";
+      i.className = "far fa-circle";
+    } else {
+      parentLi.className = "done";
+      i.className = "fas fa-check-circle";
+    }
+    span.appendChild(i);
+    parentLi.appendChild(span);
+  };
 
-        const i = document.createElement("i");
-        if (parentLi.className === "done") {
-            parentLi.className = "";
-            i.className = "far fa-circle";
-        } else {
-            parentLi.className = "done";
-            i.className = "fas fa-check-circle";
-        }
-        parentLi.appendChild(i);
-    };
-
-    input.addEventListener("keyup", handleKeyup);
-    submitBtn.addEventListener("click", handleSubmit);
-    tasks.addEventListener("click", handleTaskCheck);
+  input.addEventListener("keyup", handleKeyup);
+  submitBtn.addEventListener("click", handleSubmit);
+  tasks.addEventListener("click", handleTaskCheck);
 })();

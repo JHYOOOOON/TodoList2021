@@ -3,7 +3,7 @@
 }
 
 html {
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Comfortaa', 'Noto Sans KR', cursive;
 }
 
 html,
@@ -99,11 +99,40 @@ main {
     cursor: pointer;
 }
 
+.flex-left {
+    display: flex;
+    align-items: center;
+}
+
+.btn-wrapper {
+    margin-right: 7px;
+}
+
+.btn-wrapper.close {
+    display: none;
+}
+
+.btn-wrapper.open {
+    display: block;
+}
+
+.btn-wrapper .btn {
+    padding: 2px;
+}
+
+.editBtn svg {
+    color: var(--point-color);
+}
+
+.deleteBtn svg {
+    color: rgb(230, 68, 68);
+}
+
 .done p {
     color: #ccc;
 }
 
-.done svg {
+.done .checkBtn svg {
     color: var(--point-color);
 }
 

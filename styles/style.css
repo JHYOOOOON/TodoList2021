@@ -108,11 +108,11 @@ main {
     margin-right: 7px;
 }
 
-.btn-wrapper.close {
+.close .btn-wrapper {
     display: none;
 }
 
-.btn-wrapper.open {
+.open .btn-wrapper {
     display: block;
 }
 

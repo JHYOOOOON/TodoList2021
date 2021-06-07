@@ -61,6 +61,29 @@
             handleTaskCheck(target);
         } else if (target.classList.contains("editBtn")) {
             // 수정버튼 눌렀을 때 동작
+            let flexLeft = target.parentNode.parentNode;
+            let text = flexLeft.querySelector("p").innerText;
+            const input = document.createElement("input");
+            input.placeholder = "Write your task";
+            input.value = text;
+            input.type = "text";
+            input.addEventListener("keyup", (e) => {
+                if (e.key === "Enter") {
+                    flexLeft.innerHTML = `
+                    <div class="btn-wrapper">
+                        <span class="editBtn btn">
+                            <i class="far fa-edit"></i>
+                        </span>
+                        <span class="deleteBtn btn">
+                            <i class="far fa-trash-alt"></i>
+                        </span>
+                    </div>
+                    <p>${input.value}</p>
+                    `;
+                }
+            });
+            flexLeft.innerHTML = "";
+            flexLeft.appendChild(input);
         } else if (target.classList.contains("deleteBtn")) {
             // 삭제버튼 눌렀을 때 동작
             let li = target.parentNode;

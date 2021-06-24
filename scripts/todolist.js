@@ -3,6 +3,7 @@
     const submitBtn = document.querySelector("button");
     const tasks = document.querySelector(".tasks");
 
+    // 할 일 등록
     const handleSubmit = () => {
         if (input.value === "") return;
         console.log(tasks);
@@ -27,10 +28,12 @@
         input.value = "";
     };
 
+    // 엔터 눌렀을 때 할 일 등록
     const handleKeyup = (e) => {
         if (e.key === "Enter") handleSubmit();
     };
 
+    // 체크표시
     const handleTaskCheck = (removeTarget) => {
         let parentLi = removeTarget.parentNode;
         parentLi.removeChild(removeTarget);
@@ -95,6 +98,7 @@
         }
     };
 
+    // flex-left 클래스 찾기
     const findFlexLeft = (target) => {
         let flexLeft;
         if (target.tagName === "LI") {
@@ -115,6 +119,7 @@
         return flexLeft;
     };
 
+    // 수정/삭제 버튼 보이게 설정
     const handleBtnDisplay = (e) => {
         let flexLeft = findFlexLeft(e.target);
 
@@ -123,6 +128,7 @@
         }
     };
 
+    // 수정/삭제 버튼 안 보이게 설정
     const handleBtnRemove = (e) => {
         let flexLeft = findFlexLeft(e.target);
 
